@@ -1,0 +1,41 @@
+ext {
+    // SDK and tools
+    minSdkVersion = 24
+    compileSdkVersion = 27
+    targetSdkVersion = 27
+
+    // App dependencies
+    supportLibraryVersion = '27.1.1'
+    supportTestRunnerVersion = '1.0.2'
+    junitVersion = '4.12'
+    espressoVersion = '3.0.2'
+
+    rxjava2Version = '2.1.6'
+    rxkotlinVersion = '2.2.0'
+}
+
+buildscript {
+    ext.gradle_version = '3.2.0'
+    ext.kotlin_version = '1.2.70'
+
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath "com.android.tools.build:gradle:$gradle_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
